@@ -7,7 +7,14 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from .forms import SignupForm, ImageForm, ProfileForm, CommentForm
+from .emails import send_activation_email
+from .tokens import account_activation_token
+from .models import Image, Profile, Comments
 
+@login_required(login='/')
 def home(request):
     images = Image.get_all_images()
     
