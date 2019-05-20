@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 from django.http  import HttpResponse
@@ -14,6 +14,7 @@ from .emails import send_activation_email
 from .tokens import account_activation_token
 from .models import Image, Profile, Comments
 
+@login_required(login_url='/')
 def home(request):
     images = Image.get_all_images()
     
