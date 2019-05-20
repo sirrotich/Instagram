@@ -14,7 +14,6 @@ from .emails import send_activation_email
 from .tokens import account_activation_token
 from .models import Image, Profile, Comments
 
-@login_required(login='/')
 def home(request):
     images = Image.get_all_images()
     
