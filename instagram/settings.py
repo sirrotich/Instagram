@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pyuploadcare.dj',
-    'chats.apps.GramConfig',
+    'chats.apps.ChatsConfig',
     'tinymce',
     'bootstrap4',
     'django.contrib.admin',
