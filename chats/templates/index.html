@@ -3,12 +3,13 @@
 {% block content %}
 <div class="container top">
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-7" style="margin-left: 220px">
             {% for img in images %}
             <div class="home-images">
                 <p class="home-text">
-                    <a href="{% url 'profile' username=img.profile.username %}">{{img.profile.username}}</a>
+                    <a style="font-family: 'Gochi Hand', cursive;" href="{% url 'profile' username=img.profile.username %}">{{img.profile.username}}</a>
                 </p>
+                
                 <img src="{{img.photo.cdn_url}}" alt="Image">
                 <ul class="list-inline home-text">
                     <li class="list-inline-item">
@@ -35,5 +36,6 @@
             {% endfor %}
         </div>
     </div>
+
 </div>
 {% endblock %}

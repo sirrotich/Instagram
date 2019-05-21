@@ -49,8 +49,9 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.save()
         login(request, user)
+        # form = LoginForm()
         # return redirect('home')
-        return HttpResponse('Thank you for confirming email. Now login to your account')
+        return HttpResponse('registration/login.html')
     else:
         return HttpResponse('Activation link is invalid')
     
@@ -89,7 +90,7 @@ def edit_profile(request):
             edit = form.save(commit=False)
             edit.user = request.user
             edit.save()
-            return redirect('edit_profile')
+            return redirect('profile.html')
     else:
         form = ProfileForm()
 
