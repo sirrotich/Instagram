@@ -4,6 +4,7 @@ from .models import Location,Image,image
 # Create your tests here.
 class LocationTestClass(TestCase):
 
+
     # Set up method
     def setUp(self):
         self.nairobi= Location(first_name = 'Nairobi')
