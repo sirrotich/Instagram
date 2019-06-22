@@ -20,7 +20,6 @@ def home(request):
     
     return render(request, 'index.html', {'images':images})
 
-
 def signup(request):
     if request.user.is_authenticated():
         return redirect('home')

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 from pyuploadcare.dj.models import ImageField
 # Create your models here.
+
 class Profile(models.Model):
     # profile_photo = models.ImageField(upload_to = 'profilepics/', default='Image')
     prof_pic = ImageField(blank=True, manual_crop='800x800')
@@ -74,3 +75,4 @@ class Comments(models.Model):
     def get_comments_by_images(cls, id):
         comments = Comments.objects.filter(image__pk = id)
         return comments
+
